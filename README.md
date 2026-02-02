@@ -1,6 +1,27 @@
 # Token Benchmark Results
 
-Last run: 2026-02-02T13:58:45.483Z
+Last run: 2026-02-02T14:40:52.590Z
+
+## Notes
+
+- Overall format comparison uses equivalent fixtures only (compact, full, real-equivalent).
+- o200k_base is the closest public tokenizer to GPT-5 style tokenization.
+- cl100k_base included for comparison with earlier GPT-4 style models.
+- tokenx is a heuristic estimator and may deviate from true token counts.
+
+## Overall format comparison
+
+| rank | format | files | avg bytes | avg tokens(o200k) | tok/byte(o200k) |
+| --- | --- | --- | --- | --- | --- |
+| 1 🥇 | md (strict) | 11 | 471 | 130 | 0.275 |
+| 2 🥈 | json (min) | 11 | 541 | 137 | 0.253 |
+| 3 🥉 | toon | 11 | 512 | 150 | 0.293 |
+| 4 | md | 11 | 534 | 151 | 0.282 |
+| 5 | yaml (flow) | 11 | 553 | 153 | 0.276 |
+| 6 | toon (tab) | 11 | 519 | 157 | 0.303 |
+| 7 | yaml | 11 | 592 | 182 | 0.306 |
+| 8 | json | 11 | 659 | 192 | 0.292 |
+| 9 | xml | 11 | 750 | 248 | 0.330 |
 
 Command:
 
@@ -127,9 +148,3 @@ node bench.js
 | real/030-ui-dashboard.md | 4131 | 4109 | 133 | 1078 | 1075 | 1097 | 0.261 |
 | real/030-ui-dashboard.TODO.md | 1605 | 1601 | 24 | 373 | 373 | 417 | 0.232 |
 | real/TESTING-STACK.md | 1143 | 1143 | 25 | 284 | 279 | 308 | 0.248 |
-
-## Notes
-
-- o200k_base is the closest public tokenizer to GPT-5 style tokenization.
-- cl100k_base included for comparison with earlier GPT-4 style models.
-- tokenx is a heuristic estimator and may deviate from true token counts.

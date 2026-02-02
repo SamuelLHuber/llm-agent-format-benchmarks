@@ -1,0 +1,8 @@
+v: 1
+tid: runstore-schema
+st: done
+w[2	]: Added schema table	Added migration
+f[2	]: src/runstore.ts	tests/runstore.test.ts
+t[1	]: bun test tests/runstore.test.ts
+i[0	]:
+n[1	]: Proceed to idempotency

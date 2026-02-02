@@ -1,0 +1,12 @@
+v: 1
+id: "000"
+t: Base Cron + Webhook Execution Service
+g[2]: Execute webhooks,Run scheduled jobs
+ng[2]: No UI,No multi-tenant
+r:
+  api[2]: GET /_health,POST /webhook
+  beh[2]: async 202,idempotent 48h
+  obs[3]: otel,loki,sentry
+cfg[8]: PORT,LOG_LEVEL,WEBHOOK_SECRET,OTLP_ENDPOINT,SENTRY_DSN,RUN_STORE,RUN_STORE_SQLITE_PATH,RUN_RETENTION_DAYS
+acc[2]: Idempotency verified,Metrics exported
+ass[2]: Single region,SQLite allowed

@@ -1,0 +1,23 @@
+<spec v="1" id="050" t="Alerts">
+  <g>Detect failed runs and notify webhook</g>
+  <g>Provide retry with backoff</g>
+  <g>Include context payload and links</g>
+  <ng>No email/SMS providers</ng>
+  <ng>No UI configuration</ng>
+  <r>
+    <api>POST /alerts</api>
+    <api>GET /alerts/:id</api>
+    <api>GET /_health</api>
+    <beh>202 on accept</beh>
+    <beh>5 retries over 15 minutes</beh>
+    <beh>idempotent 6h</beh>
+    <obs>otel traces</obs>
+    <obs>logs include alert_id</obs>
+  </r>
+  <cfg>ALERTS_WEBHOOK_URL</cfg>
+  <cfg>ALERTS_RETRY_LIMIT</cfg>
+  <cfg>ALERTS_RETRY_BACKOFF_MS</cfg>
+  <acc>Alerts are retried on 5xx</acc>
+  <acc>Duplicate alert ids ignored</acc>
+  <ass>Single destination URL</ass>
+</spec>

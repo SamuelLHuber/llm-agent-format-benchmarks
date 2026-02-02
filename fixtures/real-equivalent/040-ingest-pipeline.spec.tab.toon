@@ -1,0 +1,12 @@
+v: 1
+id: "040"
+t: Ingest Pipeline
+g[4	]: Accept batch uploads over HTTP	Validate schema and store in queue	Expose status and error details	Support retry on transient failures
+ng[3	]: No UI or admin portal	No multi-tenant isolation	No realtime streaming
+r:
+  api[3	]: POST /ingest	"GET /ingest/:id"	GET /_health
+  beh[4	]: 202 on accept, 400 on validation error	idempotent 24h by client-provided id	max payload 5MB	"retries: 3x exponential backoff"
+  obs[3	]: structured logs	otel traces	"metrics: ingest.count, ingest.fail"
+cfg[4	]: PORT	LOG_LEVEL	INGEST_MAX_BYTES	INGEST_IDEMPOTENCY_HOURS
+acc[3	]: Duplicate request within window ignored	Validation error contains field + reason	Trace spans for ingest pipeline
+ass[2	]: Single region	At-least-once delivery upstream

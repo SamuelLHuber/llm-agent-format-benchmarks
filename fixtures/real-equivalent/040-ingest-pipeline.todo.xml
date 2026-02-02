@@ -1,0 +1,29 @@
+<todo v="1" id="040" tdd="true">
+  <dod>bun test</dod>
+  <dod>bun run typecheck</dod>
+  <task>
+    <id>validation</id>
+    <do>Write tests for POST /ingest validation errors; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>idempotency</id>
+    <do>Write tests for idempotency window using client id; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>storage</id>
+    <do>Write tests for ingest record storage; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>get</id>
+    <do>Write tests for GET /ingest/:id; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>metrics</id>
+    <do>Add basic metrics for ingest.count/ingest.fail with tests.</do>
+    <verify>Tests pass</verify>
+  </task>
+</todo>

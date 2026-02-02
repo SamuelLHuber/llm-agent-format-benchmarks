@@ -1,0 +1,7 @@
+v: 1
+id: "000"
+tdd: true
+dod[2	]: bun test	bun run typecheck
+ts[2	]:
+  - [3	]: runstore-schema	Write tests for SQLite schema; then implement.	Tests pass
+  - [3	]: idempotency	Write tests for X-GitHub-Delivery dedupe 48h; then implement.	Tests pass

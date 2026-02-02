@@ -1,0 +1,14 @@
+<report v="1" tid="idempotency" st="blocked">
+  <w>Added request header parsing</w>
+  <w>Added in-memory dedupe map</w>
+  <w>Added tests for duplicate delivery</w>
+  <f>src/server.ts</f>
+  <f>src/idempotency.ts</f>
+  <f>tests/idempotency.test.ts</f>
+  <t>bun test tests/idempotency.test.ts</t>
+  <t>bun run typecheck</t>
+  <i>Need persistent store for dedupe; in-memory fails restart case</i>
+  <i>Spec unclear on delivery id header for non-GitHub providers</i>
+  <n>Confirm required header name(s)</n>
+  <n>Decide store backend for dedupe</n>
+</report>

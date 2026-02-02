@@ -1,0 +1,12 @@
+v: 1
+id: "042"
+t: Cron + Webhook Execution Service
+g[5]: Execute scheduled jobs with retry and backoff,Accept inbound webhooks and enqueue runs,Provide run history with retention controls,Expose health and readiness endpoints,Support idempotent webhook delivery
+ng[4]: No multi-tenant isolation,No end-user UI or dashboard,No long-running workflows,No plugin marketplace
+r:
+  api[5]: GET /_health,GET /_ready,POST /webhook,POST /run,"GET /runs/:id"
+  beh[5]: async 202 on webhook receipt,idempotent 48h using delivery id,retry 3x exponential backoff,max run duration 5m,cancel on shutdown with 30s grace
+  obs[5]: otel traces,structured logs,loki exporter,sentry errors,"metrics: run.duration, run.count, run.fail"
+cfg[11]: PORT,LOG_LEVEL,WEBHOOK_SECRET,OTLP_ENDPOINT,SENTRY_DSN,RUN_STORE,RUN_STORE_SQLITE_PATH,RUN_RETENTION_DAYS,RUN_MAX_DURATION_MS,RUN_RETRY_LIMIT,RUN_RETRY_BACKOFF_MS
+acc[5]: Webhook receipt responds 202 < 50ms,Duplicate delivery within 48h is ignored,Run records retained for configured days,Traces visible in OTLP backend,Errors appear in Sentry with context
+ass[4]: Single region deployment,SQLite acceptable for run store,Jobs are idempotent at handler level,Clock skew < 2s

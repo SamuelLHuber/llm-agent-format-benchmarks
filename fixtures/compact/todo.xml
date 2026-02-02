@@ -1,0 +1,14 @@
+<todo v="1" id="000" tdd="true">
+  <dod>bun test</dod>
+  <dod>bun run typecheck</dod>
+  <task>
+    <id>runstore-schema</id>
+    <do>Write tests for SQLite schema; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>idempotency</id>
+    <do>Write tests for X-GitHub-Delivery dedupe 48h; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+</todo>

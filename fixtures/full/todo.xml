@@ -1,0 +1,34 @@
+<todo v="1" id="042" tdd="true">
+  <dod>bun test</dod>
+  <dod>bun run typecheck</dod>
+  <task>
+    <id>runstore-schema</id>
+    <do>Write tests for SQLite schema migration; then implement schema and index.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>idempotency</id>
+    <do>Write tests for delivery id dedupe 48h using X-GitHub-Delivery; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>enqueue-run</id>
+    <do>Write tests for POST /run; then implement enqueue and run record creation.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>retention</id>
+    <do>Write tests for retention purge by RUN_RETENTION_DAYS; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>obs</id>
+    <do>Write tests for tracing/metrics fields; then implement basic spans and counters.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>health</id>
+    <do>Write tests for GET /_health and /_ready; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+</todo>

@@ -1,0 +1,12 @@
+v: 1
+id: "050"
+t: Alerts
+g[3	]: Detect failed runs and notify webhook	Provide retry with backoff	Include context payload and links
+ng[2	]: No email/SMS providers	No UI configuration
+r:
+  api[3	]: POST /alerts	"GET /alerts/:id"	GET /_health
+  beh[3	]: 202 on accept	5 retries over 15 minutes	idempotent 6h
+  obs[2	]: otel traces	logs include alert_id
+cfg[3	]: ALERTS_WEBHOOK_URL	ALERTS_RETRY_LIMIT	ALERTS_RETRY_BACKOFF_MS
+acc[2	]: Alerts are retried on 5xx	Duplicate alert ids ignored
+ass[1	]: Single destination URL

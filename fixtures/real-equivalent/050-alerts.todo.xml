@@ -1,0 +1,29 @@
+<todo v="1" id="050" tdd="true">
+  <dod>bun test</dod>
+  <dod>bun run typecheck</dod>
+  <task>
+    <id>enqueue</id>
+    <do>Write tests for /alerts enqueue; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>retry</id>
+    <do>Write tests for retry schedule; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>idempotency</id>
+    <do>Write tests for idempotency 6h; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>get</id>
+    <do>Write tests for GET /alerts/:id; then implement.</do>
+    <verify>Tests pass</verify>
+  </task>
+  <task>
+    <id>logging</id>
+    <do>Add logging fields and tests.</do>
+    <verify>Tests pass</verify>
+  </task>
+</todo>

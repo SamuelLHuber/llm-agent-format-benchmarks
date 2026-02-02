@@ -1,0 +1,10 @@
+v: 1
+id: "050"
+tdd: true
+dod[2]: bun test,bun run typecheck
+ts[5]:
+  - [3]: enqueue,Write tests for /alerts enqueue; then implement.,Tests pass
+  - [3]: retry,Write tests for retry schedule; then implement.,Tests pass
+  - [3]: idempotency,Write tests for idempotency 6h; then implement.,Tests pass
+  - [3]: get,"Write tests for GET /alerts/:id; then implement.",Tests pass
+  - [3]: logging,Add logging fields and tests.,Tests pass

@@ -1,0 +1,48 @@
+<spec v="1" id="042" t="Cron + Webhook Execution Service">
+  <g>Execute scheduled jobs with retry and backoff</g>
+  <g>Accept inbound webhooks and enqueue runs</g>
+  <g>Provide run history with retention controls</g>
+  <g>Expose health and readiness endpoints</g>
+  <g>Support idempotent webhook delivery</g>
+  <ng>No multi-tenant isolation</ng>
+  <ng>No end-user UI or dashboard</ng>
+  <ng>No long-running workflows</ng>
+  <ng>No plugin marketplace</ng>
+  <r>
+    <api>GET /_health</api>
+    <api>GET /_ready</api>
+    <api>POST /webhook</api>
+    <api>POST /run</api>
+    <api>GET /runs/:id</api>
+    <beh>async 202 on webhook receipt</beh>
+    <beh>idempotent 48h using delivery id</beh>
+    <beh>retry 3x exponential backoff</beh>
+    <beh>max run duration 5m</beh>
+    <beh>cancel on shutdown with 30s grace</beh>
+    <obs>otel traces</obs>
+    <obs>structured logs</obs>
+    <obs>loki exporter</obs>
+    <obs>sentry errors</obs>
+    <obs>metrics: run.duration, run.count, run.fail</obs>
+  </r>
+  <cfg>PORT</cfg>
+  <cfg>LOG_LEVEL</cfg>
+  <cfg>WEBHOOK_SECRET</cfg>
+  <cfg>OTLP_ENDPOINT</cfg>
+  <cfg>SENTRY_DSN</cfg>
+  <cfg>RUN_STORE</cfg>
+  <cfg>RUN_STORE_SQLITE_PATH</cfg>
+  <cfg>RUN_RETENTION_DAYS</cfg>
+  <cfg>RUN_MAX_DURATION_MS</cfg>
+  <cfg>RUN_RETRY_LIMIT</cfg>
+  <cfg>RUN_RETRY_BACKOFF_MS</cfg>
+  <acc>Webhook receipt responds 202 &lt; 50ms</acc>
+  <acc>Duplicate delivery within 48h is ignored</acc>
+  <acc>Run records retained for configured days</acc>
+  <acc>Traces visible in OTLP backend</acc>
+  <acc>Errors appear in Sentry with context</acc>
+  <ass>Single region deployment</ass>
+  <ass>SQLite acceptable for run store</ass>
+  <ass>Jobs are idempotent at handler level</ass>
+  <ass>Clock skew &lt; 2s</ass>
+</spec>

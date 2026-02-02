@@ -1,0 +1,30 @@
+<spec v="1" id="040" t="Ingest Pipeline">
+  <g>Accept batch uploads over HTTP</g>
+  <g>Validate schema and store in queue</g>
+  <g>Expose status and error details</g>
+  <g>Support retry on transient failures</g>
+  <ng>No UI or admin portal</ng>
+  <ng>No multi-tenant isolation</ng>
+  <ng>No realtime streaming</ng>
+  <r>
+    <api>POST /ingest</api>
+    <api>GET /ingest/:id</api>
+    <api>GET /_health</api>
+    <beh>202 on accept, 400 on validation error</beh>
+    <beh>idempotent 24h by client-provided id</beh>
+    <beh>max payload 5MB</beh>
+    <beh>retries: 3x exponential backoff</beh>
+    <obs>structured logs</obs>
+    <obs>otel traces</obs>
+    <obs>metrics: ingest.count, ingest.fail</obs>
+  </r>
+  <cfg>PORT</cfg>
+  <cfg>LOG_LEVEL</cfg>
+  <cfg>INGEST_MAX_BYTES</cfg>
+  <cfg>INGEST_IDEMPOTENCY_HOURS</cfg>
+  <acc>Duplicate request within window ignored</acc>
+  <acc>Validation error contains field + reason</acc>
+  <acc>Trace spans for ingest pipeline</acc>
+  <ass>Single region</ass>
+  <ass>At-least-once delivery upstream</ass>
+</spec>

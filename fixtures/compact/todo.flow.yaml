@@ -1,0 +1,1 @@
+{v: 1, id: "000", tdd: true, dod: ["bun test", "bun run typecheck"], ts: [["runstore-schema", "Write tests for SQLite schema; then implement.", "Tests pass"], ["idempotency", "Write tests for X-GitHub-Delivery dedupe 48h; then implement.", "Tests pass"]]}

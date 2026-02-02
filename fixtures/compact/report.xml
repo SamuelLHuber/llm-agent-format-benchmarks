@@ -1,0 +1,8 @@
+<report v="1" tid="runstore-schema" st="done">
+  <w>Added schema table</w>
+  <w>Added migration</w>
+  <f>src/runstore.ts</f>
+  <f>tests/runstore.test.ts</f>
+  <t>bun test tests/runstore.test.ts</t>
+  <n>Proceed to idempotency</n>
+</report>

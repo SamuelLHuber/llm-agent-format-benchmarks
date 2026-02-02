@@ -1,0 +1,27 @@
+<spec v="1" id="000" t="Base Cron + Webhook Execution Service">
+  <g>Execute webhooks</g>
+  <g>Run scheduled jobs</g>
+  <ng>No UI</ng>
+  <ng>No multi-tenant</ng>
+  <r>
+    <api>GET /_health</api>
+    <api>POST /webhook</api>
+    <beh>async 202</beh>
+    <beh>idempotent 48h</beh>
+    <obs>otel</obs>
+    <obs>loki</obs>
+    <obs>sentry</obs>
+  </r>
+  <cfg>PORT</cfg>
+  <cfg>LOG_LEVEL</cfg>
+  <cfg>WEBHOOK_SECRET</cfg>
+  <cfg>OTLP_ENDPOINT</cfg>
+  <cfg>SENTRY_DSN</cfg>
+  <cfg>RUN_STORE</cfg>
+  <cfg>RUN_STORE_SQLITE_PATH</cfg>
+  <cfg>RUN_RETENTION_DAYS</cfg>
+  <acc>Idempotency verified</acc>
+  <acc>Metrics exported</acc>
+  <ass>Single region</ass>
+  <ass>SQLite allowed</ass>
+</spec>

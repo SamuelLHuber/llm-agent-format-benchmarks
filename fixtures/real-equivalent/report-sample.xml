@@ -1,0 +1,9 @@
+<report v="1" tid="enqueue-run" st="blocked">
+  <w>Added route handler</w>
+  <w>Added tests for 202 response</w>
+  <f>src/server.ts</f>
+  <f>tests/run.test.ts</f>
+  <t>bun test tests/run.test.ts</t>
+  <i>Need queue adapter configuration</i>
+  <n>Decide queue backend</n>
+</report>

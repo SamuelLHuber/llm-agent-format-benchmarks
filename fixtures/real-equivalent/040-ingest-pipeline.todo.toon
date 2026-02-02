@@ -1,0 +1,10 @@
+v: 1
+id: "040"
+tdd: true
+dod[2]: bun test,bun run typecheck
+ts[5]:
+  - [3]: validation,Write tests for POST /ingest validation errors; then implement.,Tests pass
+  - [3]: idempotency,Write tests for idempotency window using client id; then implement.,Tests pass
+  - [3]: storage,Write tests for ingest record storage; then implement.,Tests pass
+  - [3]: get,"Write tests for GET /ingest/:id; then implement.",Tests pass
+  - [3]: metrics,Add basic metrics for ingest.count/ingest.fail with tests.,Tests pass

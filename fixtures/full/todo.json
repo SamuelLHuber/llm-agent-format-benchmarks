@@ -1,0 +1,14 @@
+{
+  "v": 1,
+  "id": "042",
+  "tdd": true,
+  "dod": ["bun test", "bun run typecheck"],
+  "ts": [
+    ["runstore-schema", "Write tests for SQLite schema migration; then implement schema and index.", "Tests pass"],
+    ["idempotency", "Write tests for delivery id dedupe 48h using X-GitHub-Delivery; then implement.", "Tests pass"],
+    ["enqueue-run", "Write tests for POST /run; then implement enqueue and run record creation.", "Tests pass"],
+    ["retention", "Write tests for retention purge by RUN_RETENTION_DAYS; then implement.", "Tests pass"],
+    ["obs", "Write tests for tracing/metrics fields; then implement basic spans and counters.", "Tests pass"],
+    ["health", "Write tests for GET /_health and /_ready; then implement.", "Tests pass"]
+  ]
+}

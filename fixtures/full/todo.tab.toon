@@ -1,0 +1,11 @@
+v: 1
+id: "042"
+tdd: true
+dod[2	]: bun test	bun run typecheck
+ts[6	]:
+  - [3	]: runstore-schema	Write tests for SQLite schema migration; then implement schema and index.	Tests pass
+  - [3	]: idempotency	Write tests for delivery id dedupe 48h using X-GitHub-Delivery; then implement.	Tests pass
+  - [3	]: enqueue-run	Write tests for POST /run; then implement enqueue and run record creation.	Tests pass
+  - [3	]: retention	Write tests for retention purge by RUN_RETENTION_DAYS; then implement.	Tests pass
+  - [3	]: obs	Write tests for tracing/metrics fields; then implement basic spans and counters.	Tests pass
+  - [3	]: health	Write tests for GET /_health and /_ready; then implement.	Tests pass

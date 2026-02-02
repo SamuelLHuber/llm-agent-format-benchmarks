@@ -1,0 +1,15 @@
+{
+  "v": 1,
+  "id": "000",
+  "t": "Base Cron + Webhook Execution Service",
+  "g": ["Execute webhooks", "Run scheduled jobs"],
+  "ng": ["No UI", "No multi-tenant"],
+  "r": {
+    "api": ["GET /_health", "POST /webhook"],
+    "beh": ["async 202", "idempotent 48h"],
+    "obs": ["otel", "loki", "sentry"]
+  },
+  "cfg": ["PORT", "LOG_LEVEL", "WEBHOOK_SECRET", "OTLP_ENDPOINT", "SENTRY_DSN", "RUN_STORE", "RUN_STORE_SQLITE_PATH", "RUN_RETENTION_DAYS"],
+  "acc": ["Idempotency verified", "Metrics exported"],
+  "ass": ["Single region", "SQLite allowed"]
+}

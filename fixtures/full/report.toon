@@ -1,0 +1,8 @@
+v: 1
+tid: idempotency
+st: blocked
+w[3]: Added request header parsing,Added in-memory dedupe map,Added tests for duplicate delivery
+f[3]: src/server.ts,src/idempotency.ts,tests/idempotency.test.ts
+t[2]: bun test tests/idempotency.test.ts,bun run typecheck
+i[2]: Need persistent store for dedupe; in-memory fails restart case,Spec unclear on delivery id header for non-GitHub providers
+n[2]: Confirm required header name(s),Decide store backend for dedupe
